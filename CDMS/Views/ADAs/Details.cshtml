@@ -1,0 +1,26 @@
+﻿@model CDMS.Entities.ADA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ADA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.adaname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adaname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.adaid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

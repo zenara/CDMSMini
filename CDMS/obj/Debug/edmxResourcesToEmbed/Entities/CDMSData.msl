@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CDMSModelStoreContainer" CdmEntityContainer="CDMSEntities1">
+    <EntitySetMapping Name="ADAs">
+      <EntityTypeMapping TypeName="CDMSModel.ADA">
+        <MappingFragment StoreEntitySet="ADA">
+          <ScalarProperty Name="adaid" ColumnName="adaid" />
+          <ScalarProperty Name="adaname" ColumnName="adaname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMINs">
+      <EntityTypeMapping TypeName="CDMSModel.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="nic" ColumnName="nic" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AGEGROUPs">
+      <EntityTypeMapping TypeName="CDMSModel.AGEGROUP">
+        <MappingFragment StoreEntitySet="AGEGROUP">
+          <ScalarProperty Name="agegroupid" ColumnName="agegroupid" />
+          <ScalarProperty Name="agegroupname" ColumnName="agegroupname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AILISTs">
+      <EntityTypeMapping TypeName="CDMSModel.AILIST">
+        <MappingFragment StoreEntitySet="AILIST">
+          <ScalarProperty Name="aiid" ColumnName="aiid" />
+          <ScalarProperty Name="ascid" ColumnName="ascid" />
+          <ScalarProperty Name="airange" ColumnName="airange" />
+          <ScalarProperty Name="ainame" ColumnName="ainame" />
+          <ScalarProperty Name="nic" ColumnName="nic" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ASCs">
+      <EntityTypeMapping TypeName="CDMSModel.ASC">
+        <MappingFragment StoreEntitySet="ASC">
+          <ScalarProperty Name="ascid" ColumnName="ascid" />
+          <ScalarProperty Name="dsid" ColumnName="dsid" />
+          <ScalarProperty Name="ascname" ColumnName="ascname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DS">
+      <EntityTypeMapping TypeName="CDMSModel.D">
+        <MappingFragment StoreEntitySet="DS">
+          <ScalarProperty Name="dsid" ColumnName="dsid" />
+          <ScalarProperty Name="districtid" ColumnName="districtid" />
+          <ScalarProperty Name="dsname" ColumnName="dsname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSTRCTs">
+      <EntityTypeMapping TypeName="CDMSModel.DSTRCT">
+        <MappingFragment StoreEntitySet="DSTRCT">
+          <ScalarProperty Name="districtid" ColumnName="districtid" />
+          <ScalarProperty Name="adaid" ColumnName="adaid" />
+          <ScalarProperty Name="districtname" ColumnName="districtname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAJORPADDies">
+      <EntityTypeMapping TypeName="CDMSModel.MAJORPADDY">
+        <MappingFragment StoreEntitySet="MAJORPADDY">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="monthid" ColumnName="monthid" />
+          <ScalarProperty Name="varietyid" ColumnName="varietyid" />
+          <ScalarProperty Name="monthlytarget" ColumnName="monthlytarget" />
+          <ScalarProperty Name="monthlyprogress" ColumnName="monthlyprogress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MINORPADDies">
+      <EntityTypeMapping TypeName="CDMSModel.MINORPADDY">
+        <MappingFragment StoreEntitySet="MINORPADDY">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="monthid" ColumnName="monthid" />
+          <ScalarProperty Name="varietyid" ColumnName="varietyid" />
+          <ScalarProperty Name="monthlytarget" ColumnName="monthlytarget" />
+          <ScalarProperty Name="monthlyprogress" ColumnName="monthlyprogress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MONTHS">
+      <EntityTypeMapping TypeName="CDMSModel.MONTH">
+        <MappingFragment StoreEntitySet="MONTHS">
+          <ScalarProperty Name="monthid" ColumnName="monthid" />
+          <ScalarProperty Name="monthname" ColumnName="monthname" />
+          <ScalarProperty Name="seasonid" ColumnName="seasonid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RAINFEDPADDies">
+      <EntityTypeMapping TypeName="CDMSModel.RAINFEDPADDY">
+        <MappingFragment StoreEntitySet="RAINFEDPADDY">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="monthid" ColumnName="monthid" />
+          <ScalarProperty Name="varietyid" ColumnName="varietyid" />
+          <ScalarProperty Name="monthlytarget" ColumnName="monthlytarget" />
+          <ScalarProperty Name="monthlyprogress" ColumnName="monthlyprogress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEASONS">
+      <EntityTypeMapping TypeName="CDMSModel.SEASON">
+        <MappingFragment StoreEntitySet="SEASONS">
+          <ScalarProperty Name="seasonid" ColumnName="seasonid" />
+          <ScalarProperty Name="seasonname" ColumnName="seasonname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VARIETies">
+      <EntityTypeMapping TypeName="CDMSModel.VARIETY">
+        <MappingFragment StoreEntitySet="VARIETY">
+          <ScalarProperty Name="varietyid" ColumnName="varietyid" />
+          <ScalarProperty Name="varietyname" ColumnName="varietyname" />
+          <ScalarProperty Name="agegroupid" ColumnName="agegroupid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YEARS">
+      <EntityTypeMapping TypeName="CDMSModel.YEAR">
+        <MappingFragment StoreEntitySet="YEARS">
+          <ScalarProperty Name="yearid" ColumnName="yearid" />
+          <ScalarProperty Name="yearref" ColumnName="yearref" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

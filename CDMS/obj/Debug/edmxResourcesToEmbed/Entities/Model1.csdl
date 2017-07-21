@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CDMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADA">
+    <Key>
+      <PropertyRef Name="adaid" />
+    </Key>
+    <Property Name="adaid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adaname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DSTRCTs" Relationship="Self.FK_DSTRCT_ADA" FromRole="ADA" ToRole="DSTRCT" />
+  </EntityType>
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="nic" />
+    </Key>
+    <Property Name="nic" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AGEGROUP">
+    <Key>
+      <PropertyRef Name="agegroupid" />
+    </Key>
+    <Property Name="agegroupid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="agegroupname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="VARIETies" Relationship="Self.FK_VARIETY_AGEGROUP" FromRole="AGEGROUP" ToRole="VARIETY" />
+  </EntityType>
+  <EntityType Name="AILIST">
+    <Key>
+      <PropertyRef Name="aiid" />
+    </Key>
+    <Property Name="aiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ascid" Type="Int32" Nullable="false" />
+    <Property Name="airange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ainame" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nic" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="telephone" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="email" Type="Binary" MaxLength="50" FixedLength="false" />
+    <NavigationProperty Name="ASC" Relationship="Self.FK_AILIST_ASC" FromRole="AILIST" ToRole="ASC" />
+    <NavigationProperty Name="MAJORPADDies" Relationship="Self.FK_MAJORPADDY_AILIST" FromRole="AILIST" ToRole="MAJORPADDY" />
+    <NavigationProperty Name="MINORPADDies" Relationship="Self.FK_MINORPADDY_AILIST" FromRole="AILIST" ToRole="MINORPADDY" />
+    <NavigationProperty Name="RAINFEDPADDies" Relationship="Self.FK_RAINFEDPADDY_MONTHS" FromRole="AILIST" ToRole="RAINFEDPADDY" />
+  </EntityType>
+  <EntityType Name="ASC">
+    <Key>
+      <PropertyRef Name="ascid" />
+    </Key>
+    <Property Name="ascid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dsid" Type="Int32" Nullable="false" />
+    <Property Name="ascname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AILISTs" Relationship="Self.FK_AILIST_ASC" FromRole="ASC" ToRole="AILIST" />
+    <NavigationProperty Name="D" Relationship="Self.FK_ASC_DS" FromRole="ASC" ToRole="DS" />
+  </EntityType>
+  <EntityType Name="D">
+    <Key>
+      <PropertyRef Name="dsid" />
+    </Key>
+    <Property Name="dsid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="districtid" Type="Int32" Nullable="false" />
+    <Property Name="dsname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ASCs" Relationship="Self.FK_ASC_DS" FromRole="DS" ToRole="ASC" />
+    <NavigationProperty Name="DSTRCT" Relationship="Self.FK_DS_DSTRCT" FromRole="DS" ToRole="DSTRCT" />
+  </EntityType>
+  <EntityType Name="DSTRCT">
+    <Key>
+      <PropertyRef Name="districtid" />
+    </Key>
+    <Property Name="districtid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adaid" Type="Int32" Nullable="false" />
+    <Property Name="districtname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ADA" Relationship="Self.FK_DSTRCT_ADA" FromRole="DSTRCT" ToRole="ADA" />
+    <NavigationProperty Name="DS" Relationship="Self.FK_DS_DSTRCT" FromRole="DSTRCT" ToRole="DS" />
+  </EntityType>
+  <EntityType Name="MAJORPADDY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="aiid" Type="Int32" Nullable="false" />
+    <Property Name="yearid" Type="Int32" Nullable="false" />
+    <Property Name="monthid" Type="Int32" Nullable="false" />
+    <Property Name="varietyid" Type="Int32" Nullable="false" />
+    <Property Name="monthlytarget" Type="Double" Nullable="false" />
+    <Property Name="monthlyprogress" Type="Double" Nullable="false" />
+    <NavigationProperty Name="AILIST" Relationship="Self.FK_MAJORPADDY_AILIST" FromRole="MAJORPADDY" ToRole="AILIST" />
+    <NavigationProperty Name="MONTH" Relationship="Self.FK_MAJORPADDY_MONTHS" FromRole="MAJORPADDY" ToRole="MONTHS" />
+    <NavigationProperty Name="VARIETY" Relationship="Self.FK_MAJORPADDY_VARIETY" FromRole="MAJORPADDY" ToRole="VARIETY" />
+    <NavigationProperty Name="YEAR" Relationship="Self.FK_MAJORPADDY_YEARS" FromRole="MAJORPADDY" ToRole="YEARS" />
+  </EntityType>
+  <EntityType Name="MINORPADDY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="aiid" Type="Int32" Nullable="false" />
+    <Property Name="yearid" Type="Int32" Nullable="false" />
+    <Property Name="monthid" Type="Int32" Nullable="false" />
+    <Property Name="varietyid" Type="Int32" Nullable="false" />
+    <Property Name="monthlytarget" Type="Double" Nullable="false" />
+    <Property Name="monthlyprogress" Type="Double" Nullable="false" />
+    <NavigationProperty Name="AILIST" Relationship="Self.FK_MINORPADDY_AILIST" FromRole="MINORPADDY" ToRole="AILIST" />
+    <NavigationProperty Name="MONTH" Relationship="Self.FK_MINORPADDY_MONTHS" FromRole="MINORPADDY" ToRole="MONTHS" />
+    <NavigationProperty Name="VARIETY" Relationship="Self.FK_MINORPADDY_VARIETY" FromRole="MINORPADDY" ToRole="VARIETY" />
+    <NavigationProperty Name="YEAR" Relationship="Self.FK_MINORPADDY_YEARS" FromRole="MINORPADDY" ToRole="YEARS" />
+  </EntityType>
+  <EntityType Name="MONTH">
+    <Key>
+      <PropertyRef Name="monthid" />
+    </Key>
+    <Property Name="monthid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="monthname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="seasonid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MAJORPADDies" Relationship="Self.FK_MAJORPADDY_MONTHS" FromRole="MONTHS" ToRole="MAJORPADDY" />
+    <NavigationProperty Name="MINORPADDies" Relationship="Self.FK_MINORPADDY_MONTHS" FromRole="MONTHS" ToRole="MINORPADDY" />
+    <NavigationProperty Name="SEASON" Relationship="Self.FK_MONTHS_SEASONS" FromRole="MONTHS" ToRole="SEASONS" />
+    <NavigationProperty Name="RAINFEDPADDies" Relationship="CDMSModel.FK_RAINFEDPADDY_MONTHS1" FromRole="MONTH" ToRole="RAINFEDPADDY" />
+  </EntityType>
+  <EntityType Name="RAINFEDPADDY">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="aiid" Type="Int32" Nullable="false" />
+    <Property Name="yearid" Type="Int32" Nullable="false" />
+    <Property Name="monthid" Type="Int32" Nullable="false" />
+    <Property Name="varietyid" Type="Int32" Nullable="false" />
+    <Property Name="monthlytarget" Type="Double" Nullable="false" />
+    <Property Name="monthlyprogress" Type="Double" Nullable="false" />
+    <NavigationProperty Name="AILIST" Relationship="Self.FK_RAINFEDPADDY_MONTHS" FromRole="RAINFEDPADDY" ToRole="AILIST" />
+    <NavigationProperty Name="VARIETY" Relationship="Self.FK_RAINFEDPADDY_VARIETY" FromRole="RAINFEDPADDY" ToRole="VARIETY" />
+    <NavigationProperty Name="YEAR" Relationship="Self.FK_RAINFEDPADDY_YEARS" FromRole="RAINFEDPADDY" ToRole="YEARS" />
+    <NavigationProperty Name="MONTH" Relationship="CDMSModel.FK_RAINFEDPADDY_MONTHS1" FromRole="RAINFEDPADDY" ToRole="MONTH" />
+  </EntityType>
+  <EntityType Name="SEASON">
+    <Key>
+      <PropertyRef Name="seasonid" />
+    </Key>
+    <Property Name="seasonid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="seasonname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="MONTHS" Relationship="Self.FK_MONTHS_SEASONS" FromRole="SEASONS" ToRole="MONTHS" />
+  </EntityType>
+  <EntityType Name="VARIETY">
+    <Key>
+      <PropertyRef Name="varietyid" />
+    </Key>
+    <Property Name="varietyid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="varietyname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="agegroupid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AGEGROUP" Relationship="Self.FK_VARIETY_AGEGROUP" FromRole="VARIETY" ToRole="AGEGROUP" />
+    <NavigationProperty Name="MAJORPADDies" Relationship="Self.FK_MAJORPADDY_VARIETY" FromRole="VARIETY" ToRole="MAJORPADDY" />
+    <NavigationProperty Name="MINORPADDies" Relationship="Self.FK_MINORPADDY_VARIETY" FromRole="VARIETY" ToRole="MINORPADDY" />
+    <NavigationProperty Name="RAINFEDPADDies" Relationship="Self.FK_RAINFEDPADDY_VARIETY" FromRole="VARIETY" ToRole="RAINFEDPADDY" />
+  </EntityType>
+  <EntityType Name="YEAR">
+    <Key>
+      <PropertyRef Name="yearid" />
+    </Key>
+    <Property Name="yearid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yearref" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MAJORPADDies" Relationship="Self.FK_MAJORPADDY_YEARS" FromRole="YEARS" ToRole="MAJORPADDY" />
+    <NavigationProperty Name="MINORPADDies" Relationship="Self.FK_MINORPADDY_YEARS" FromRole="YEARS" ToRole="MINORPADDY" />
+    <NavigationProperty Name="RAINFEDPADDies" Relationship="Self.FK_RAINFEDPADDY_YEARS" FromRole="YEARS" ToRole="RAINFEDPADDY" />
+  </EntityType>
+  <Association Name="FK_DSTRCT_ADA">
+    <End Role="ADA" Type="Self.ADA" Multiplicity="1" />
+    <End Role="DSTRCT" Type="Self.DSTRCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ADA">
+        <PropertyRef Name="adaid" />
+      </Principal>
+      <Dependent Role="DSTRCT">
+        <PropertyRef Name="adaid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VARIETY_AGEGROUP">
+    <End Role="AGEGROUP" Type="Self.AGEGROUP" Multiplicity="1" />
+    <End Role="VARIETY" Type="Self.VARIETY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AGEGROUP">
+        <PropertyRef Name="agegroupid" />
+      </Principal>
+      <Dependent Role="VARIETY">
+        <PropertyRef Name="agegroupid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AILIST_ASC">
+    <End Role="ASC" Type="Self.ASC" Multiplicity="1" />
+    <End Role="AILIST" Type="Self.AILIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ASC">
+        <PropertyRef Name="ascid" />
+      </Principal>
+      <Dependent Role="AILIST">
+        <PropertyRef Name="ascid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAJORPADDY_AILIST">
+    <End Role="AILIST" Type="Self.AILIST" Multiplicity="1" />
+    <End Role="MAJORPADDY" Type="Self.MAJORPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AILIST">
+        <PropertyRef Name="aiid" />
+      </Principal>
+      <Dependent Role="MAJORPADDY">
+        <PropertyRef Name="aiid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MINORPADDY_AILIST">
+    <End Role="AILIST" Type="Self.AILIST" Multiplicity="1" />
+    <End Role="MINORPADDY" Type="Self.MINORPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AILIST">
+        <PropertyRef Name="aiid" />
+      </Principal>
+      <Dependent Role="MINORPADDY">
+        <PropertyRef Name="aiid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RAINFEDPADDY_MONTHS">
+    <End Role="AILIST" Type="Self.AILIST" Multiplicity="1" />
+    <End Role="RAINFEDPADDY" Type="Self.RAINFEDPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AILIST">
+        <PropertyRef Name="aiid" />
+      </Principal>
+      <Dependent Role="RAINFEDPADDY">
+        <PropertyRef Name="aiid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASC_DS">
+    <End Role="DS" Type="Self.D" Multiplicity="1" />
+    <End Role="ASC" Type="Self.ASC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DS">
+        <PropertyRef Name="dsid" />
+      </Principal>
+      <Dependent Role="ASC">
+        <PropertyRef Name="dsid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DS_DSTRCT">
+    <End Role="DSTRCT" Type="Self.DSTRCT" Multiplicity="1" />
+    <End Role="DS" Type="Self.D" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSTRCT">
+        <PropertyRef Name="districtid" />
+      </Principal>
+      <Dependent Role="DS">
+        <PropertyRef Name="districtid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAJORPADDY_MONTHS">
+    <End Role="MONTHS" Type="Self.MONTH" Multiplicity="1" />
+    <End Role="MAJORPADDY" Type="Self.MAJORPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONTHS">
+        <PropertyRef Name="monthid" />
+      </Principal>
+      <Dependent Role="MAJORPADDY">
+        <PropertyRef Name="monthid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAJORPADDY_VARIETY">
+    <End Role="VARIETY" Type="Self.VARIETY" Multiplicity="1" />
+    <End Role="MAJORPADDY" Type="Self.MAJORPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VARIETY">
+        <PropertyRef Name="varietyid" />
+      </Principal>
+      <Dependent Role="MAJORPADDY">
+        <PropertyRef Name="varietyid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAJORPADDY_YEARS">
+    <End Role="YEARS" Type="Self.YEAR" Multiplicity="1" />
+    <End Role="MAJORPADDY" Type="Self.MAJORPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YEARS">
+        <PropertyRef Name="yearid" />
+      </Principal>
+      <Dependent Role="MAJORPADDY">
+        <PropertyRef Name="yearid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MINORPADDY_MONTHS">
+    <End Role="MONTHS" Type="Self.MONTH" Multiplicity="1" />
+    <End Role="MINORPADDY" Type="Self.MINORPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONTHS">
+        <PropertyRef Name="monthid" />
+      </Principal>
+      <Dependent Role="MINORPADDY">
+        <PropertyRef Name="monthid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MINORPADDY_VARIETY">
+    <End Role="VARIETY" Type="Self.VARIETY" Multiplicity="1" />
+    <End Role="MINORPADDY" Type="Self.MINORPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VARIETY">
+        <PropertyRef Name="varietyid" />
+      </Principal>
+      <Dependent Role="MINORPADDY">
+        <PropertyRef Name="varietyid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MINORPADDY_YEARS">
+    <End Role="YEARS" Type="Self.YEAR" Multiplicity="1" />
+    <End Role="MINORPADDY" Type="Self.MINORPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YEARS">
+        <PropertyRef Name="yearid" />
+      </Principal>
+      <Dependent Role="MINORPADDY">
+        <PropertyRef Name="yearid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MONTHS_SEASONS">
+    <End Role="SEASONS" Type="Self.SEASON" Multiplicity="1" />
+    <End Role="MONTHS" Type="Self.MONTH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEASONS">
+        <PropertyRef Name="seasonid" />
+      </Principal>
+      <Dependent Role="MONTHS">
+        <PropertyRef Name="seasonid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RAINFEDPADDY_VARIETY">
+    <End Role="VARIETY" Type="Self.VARIETY" Multiplicity="1" />
+    <End Role="RAINFEDPADDY" Type="Self.RAINFEDPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VARIETY">
+        <PropertyRef Name="varietyid" />
+      </Principal>
+      <Dependent Role="RAINFEDPADDY">
+        <PropertyRef Name="varietyid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RAINFEDPADDY_YEARS">
+    <End Role="YEARS" Type="Self.YEAR" Multiplicity="1" />
+    <End Role="RAINFEDPADDY" Type="Self.RAINFEDPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YEARS">
+        <PropertyRef Name="yearid" />
+      </Principal>
+      <Dependent Role="RAINFEDPADDY">
+        <PropertyRef Name="yearid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CDMSEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADAs" EntityType="Self.ADA" />
+    <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
+    <EntitySet Name="AGEGROUPs" EntityType="Self.AGEGROUP" />
+    <EntitySet Name="AILISTs" EntityType="Self.AILIST" />
+    <EntitySet Name="ASCs" EntityType="Self.ASC" />
+    <EntitySet Name="DS" EntityType="Self.D" />
+    <EntitySet Name="DSTRCTs" EntityType="Self.DSTRCT" />
+    <EntitySet Name="MAJORPADDies" EntityType="Self.MAJORPADDY" />
+    <EntitySet Name="MINORPADDies" EntityType="Self.MINORPADDY" />
+    <EntitySet Name="MONTHS" EntityType="Self.MONTH" />
+    <EntitySet Name="RAINFEDPADDies" EntityType="Self.RAINFEDPADDY" />
+    <EntitySet Name="SEASONS" EntityType="Self.SEASON" />
+    <EntitySet Name="VARIETies" EntityType="Self.VARIETY" />
+    <EntitySet Name="YEARS" EntityType="Self.YEAR" />
+    <AssociationSet Name="FK_DSTRCT_ADA" Association="Self.FK_DSTRCT_ADA">
+      <End Role="ADA" EntitySet="ADAs" />
+      <End Role="DSTRCT" EntitySet="DSTRCTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VARIETY_AGEGROUP" Association="Self.FK_VARIETY_AGEGROUP">
+      <End Role="AGEGROUP" EntitySet="AGEGROUPs" />
+      <End Role="VARIETY" EntitySet="VARIETies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AILIST_ASC" Association="Self.FK_AILIST_ASC">
+      <End Role="ASC" EntitySet="ASCs" />
+      <End Role="AILIST" EntitySet="AILISTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAJORPADDY_AILIST" Association="Self.FK_MAJORPADDY_AILIST">
+      <End Role="AILIST" EntitySet="AILISTs" />
+      <End Role="MAJORPADDY" EntitySet="MAJORPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MINORPADDY_AILIST" Association="Self.FK_MINORPADDY_AILIST">
+      <End Role="AILIST" EntitySet="AILISTs" />
+      <End Role="MINORPADDY" EntitySet="MINORPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RAINFEDPADDY_MONTHS" Association="Self.FK_RAINFEDPADDY_MONTHS">
+      <End Role="AILIST" EntitySet="AILISTs" />
+      <End Role="RAINFEDPADDY" EntitySet="RAINFEDPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASC_DS" Association="Self.FK_ASC_DS">
+      <End Role="DS" EntitySet="DS" />
+      <End Role="ASC" EntitySet="ASCs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DS_DSTRCT" Association="Self.FK_DS_DSTRCT">
+      <End Role="DSTRCT" EntitySet="DSTRCTs" />
+      <End Role="DS" EntitySet="DS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAJORPADDY_MONTHS" Association="Self.FK_MAJORPADDY_MONTHS">
+      <End Role="MONTHS" EntitySet="MONTHS" />
+      <End Role="MAJORPADDY" EntitySet="MAJORPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAJORPADDY_VARIETY" Association="Self.FK_MAJORPADDY_VARIETY">
+      <End Role="VARIETY" EntitySet="VARIETies" />
+      <End Role="MAJORPADDY" EntitySet="MAJORPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAJORPADDY_YEARS" Association="Self.FK_MAJORPADDY_YEARS">
+      <End Role="YEARS" EntitySet="YEARS" />
+      <End Role="MAJORPADDY" EntitySet="MAJORPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MINORPADDY_MONTHS" Association="Self.FK_MINORPADDY_MONTHS">
+      <End Role="MONTHS" EntitySet="MONTHS" />
+      <End Role="MINORPADDY" EntitySet="MINORPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MINORPADDY_VARIETY" Association="Self.FK_MINORPADDY_VARIETY">
+      <End Role="VARIETY" EntitySet="VARIETies" />
+      <End Role="MINORPADDY" EntitySet="MINORPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MINORPADDY_YEARS" Association="Self.FK_MINORPADDY_YEARS">
+      <End Role="YEARS" EntitySet="YEARS" />
+      <End Role="MINORPADDY" EntitySet="MINORPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MONTHS_SEASONS" Association="Self.FK_MONTHS_SEASONS">
+      <End Role="SEASONS" EntitySet="SEASONS" />
+      <End Role="MONTHS" EntitySet="MONTHS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RAINFEDPADDY_VARIETY" Association="Self.FK_RAINFEDPADDY_VARIETY">
+      <End Role="VARIETY" EntitySet="VARIETies" />
+      <End Role="RAINFEDPADDY" EntitySet="RAINFEDPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RAINFEDPADDY_YEARS" Association="Self.FK_RAINFEDPADDY_YEARS">
+      <End Role="YEARS" EntitySet="YEARS" />
+      <End Role="RAINFEDPADDY" EntitySet="RAINFEDPADDies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RAINFEDPADDY_MONTHS1" Association="CDMSModel.FK_RAINFEDPADDY_MONTHS1">
+      <End Role="MONTH" EntitySet="MONTHS" />
+      <End Role="RAINFEDPADDY" EntitySet="RAINFEDPADDies" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_RAINFEDPADDY_MONTHS1">
+    <End Type="CDMSModel.MONTH" Role="MONTH" Multiplicity="1" />
+    <End Type="CDMSModel.RAINFEDPADDY" Role="RAINFEDPADDY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONTH">
+        <PropertyRef Name="monthid" />
+      </Principal>
+      <Dependent Role="RAINFEDPADDY">
+        <PropertyRef Name="monthid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

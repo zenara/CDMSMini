@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CDMS.Entities.MAJORPADDY>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.monthlytarget)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monthlyprogress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AILIST.airange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MONTH.monthname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VARIETY.varietyname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YEAR.yearid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.monthlytarget)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.monthlyprogress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AILIST.airange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MONTH.monthname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VARIETY.varietyname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YEAR.yearid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="886a20327a0e4a91b14cf430120bf25f" Name="Diagram1">
+        <EntityTypeShape EntityType="CDMSModel.ADA" Width="1.5" PointX="2.875" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.ADMIN" Width="1.5" PointX="1.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.AGEGROUP" Width="1.5" PointX="10.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.AILIST" Width="1.5" PointX="2.875" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.ASC" Width="1.5" PointX="2.875" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.D" Width="1.5" PointX="2.875" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.DSTRCT" Width="1.5" PointX="2.875" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.MAJORPADDY" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.MINORPADDY" Width="1.5" PointX="7.625" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.MONTH" Width="1.5" PointX="7.125" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.RAINFEDPADDY" Width="1.5" PointX="10.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.SEASON" Width="1.5" PointX="7.125" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.VARIETY" Width="1.5" PointX="10.625" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CDMSModel.YEAR" Width="1.5" PointX="7.625" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="CDMSModel.FK_DSTRCT_ADA" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_VARIETY_AGEGROUP" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_AILIST_ASC" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MAJORPADDY_AILIST" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MINORPADDY_AILIST" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_RAINFEDPADDY_MONTHS" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_ASC_DS" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_DS_DSTRCT" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MAJORPADDY_MONTHS" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MAJORPADDY_VARIETY" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MAJORPADDY_YEARS" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MINORPADDY_MONTHS" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MINORPADDY_VARIETY" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MINORPADDY_YEARS" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_MONTHS_SEASONS" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_RAINFEDPADDY_VARIETY" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_RAINFEDPADDY_YEARS" ManuallyRouted="false" />
+        <AssociationConnector Association="CDMSModel.FK_RAINFEDPADDY_MONTHS1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,34 @@
+﻿@model CDMS.Entities.D
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>D</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dsname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dsname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DSTRCT.districtname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DSTRCT.districtname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.dsid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

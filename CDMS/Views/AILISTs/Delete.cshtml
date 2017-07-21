@@ -1,0 +1,72 @@
+﻿@model CDMS.Entities.AILIST
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AILIST</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.airange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.airange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ainame)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ainame)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ASC.ascname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ASC.ascname)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

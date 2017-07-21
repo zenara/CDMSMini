@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CDMS.Entities.AILIST>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.airange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ainame)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASC.ascname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.airange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ainame)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASC.ascname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.aiid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.aiid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.aiid })
+        </td>
+    </tr>
+}
+
+</table>
