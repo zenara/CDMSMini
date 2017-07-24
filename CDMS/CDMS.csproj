@@ -249,6 +249,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="images\737973.jpg" />
     <Content Include="images\738017.jpg" />
+    <Content Include="images\consultant.jpg" />
+    <Content Include="images\crop.jpg" />
+    <Content Include="images\women.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Entities\Model1.edmx">
