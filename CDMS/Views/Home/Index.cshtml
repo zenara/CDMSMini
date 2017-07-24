@@ -125,3 +125,15 @@
         </div>
     </div><br>
     </div>
+<!-- Add Google Maps -->
+<div id="googleMap" style="height:400px;width:100%;"></div>
+<script>
+function myMap() {
+    var myCenter = new google.maps.LatLng(8.3329048, 80.4126668);
+var mapProp = {center:myCenter, zoom:15, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6cCwEvHIEqkIClpto_3svY-OX7owe3Es&callback=myMap"></script>
