@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body id="myPage">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -32,8 +32,11 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer class="container-fluid text-center">
+            <a href="#myPage" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up" style="color: #529708"></span>
+            </a>
+            <p>&copy; @DateTime.Now.Year - Department of Agriculture</p>
         </footer>
     </div>
 

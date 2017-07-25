@@ -26,5 +26,12 @@ namespace CDMS.Controllers
 
             return View();
         }
+
+        public ActionResult Statistics()
+        {
+            ViewBag.Message = "View the Statistics.";
+
+            return View();
+        }
     }
 }

@@ -248,10 +248,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\737973.jpg" />
-    <Content Include="images\738017.jpg" />
-    <Content Include="images\consultant.jpg" />
-    <Content Include="images\crop.jpg" />
-    <Content Include="images\women.jpg" />
+    <Content Include="images\consultant1.jpg" />
+    <Content Include="images\crop1.jpg" />
+    <Content Include="images\women1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Entities\Model1.edmx">
@@ -376,6 +375,7 @@
     <Content Include="Views\YEARs\Details.cshtml" />
     <Content Include="Views\YEARs\Edit.cshtml" />
     <Content Include="Views\YEARs\Index.cshtml" />
+    <Content Include="Views\Home\Statistics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
