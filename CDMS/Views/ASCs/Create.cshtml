@@ -20,6 +20,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("dsid", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.dsid, "", new { @class = "text-danger" })
+                <a href="~/D/Create" class="btn btn-success btn-sm">ADD</a>
             </div>
         </div>
 

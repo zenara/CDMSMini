@@ -375,7 +375,6 @@
     <Content Include="Views\YEARs\Details.cshtml" />
     <Content Include="Views\YEARs\Edit.cshtml" />
     <Content Include="Views\YEARs\Index.cshtml" />
-    <Content Include="Views\Home\Statistics.cshtml" />
     <Content Include="Views\Shared\_EmptyLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
