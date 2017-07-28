@@ -4,9 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="886a20327a0e4a91b14cf430120bf25f" Name="Diagram1">
+      <Diagram DiagramId="886a20327a0e4a91b14cf430120bf25f" Name="Diagram1" ZoomLevel="108">
         <EntityTypeShape EntityType="CDMSModel.ADA" Width="1.5" PointX="2.875" PointY="21.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CDMSModel.ADMIN" Width="1.5" PointX="1.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CDMSModel.AGEGROUP" Width="1.5" PointX="10.25" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CDMSModel.AILIST" Width="1.5" PointX="2.875" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CDMSModel.ASC" Width="1.5" PointX="2.875" PointY="13.125" IsExpanded="true" />

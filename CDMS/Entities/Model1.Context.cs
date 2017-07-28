@@ -26,7 +26,6 @@ namespace CDMS.Entities
         }
     
         public virtual DbSet<ADA> ADAs { get; set; }
-        public virtual DbSet<ADMIN> ADMINs { get; set; }
         public virtual DbSet<AGEGROUP> AGEGROUPs { get; set; }
         public virtual DbSet<AILIST> AILISTs { get; set; }
         public virtual DbSet<ASC> ASCs { get; set; }

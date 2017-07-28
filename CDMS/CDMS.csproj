@@ -177,9 +177,6 @@
     <Compile Include="Entities\ADA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\ADMIN.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\AGEGROUP.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -7,14 +7,6 @@
     <Property Name="adaid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="adaname" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="ADMIN">
-    <Key>
-      <PropertyRef Name="nic" />
-    </Key>
-    <Property Name="nic" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="username" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="password" Type="nchar" MaxLength="20" Nullable="false" />
-  </EntityType>
   <EntityType Name="AGEGROUP">
     <Key>
       <PropertyRef Name="agegroupid" />
@@ -30,9 +22,9 @@
     <Property Name="ascid" Type="int" Nullable="false" />
     <Property Name="airange" Type="varchar" MaxLength="50" />
     <Property Name="ainame" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="nic" Type="varbinary" MaxLength="50" />
-    <Property Name="telephone" Type="varbinary" MaxLength="50" />
-    <Property Name="email" Type="varbinary" MaxLength="50" />
+    <Property Name="nic" Type="varchar" MaxLength="50" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="ASC">
     <Key>
@@ -342,7 +334,6 @@
   </Association>
   <EntityContainer Name="CDMSModelStoreContainer">
     <EntitySet Name="ADA" EntityType="Self.ADA" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AGEGROUP" EntityType="Self.AGEGROUP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AILIST" EntityType="Self.AILIST" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ASC" EntityType="Self.ASC" Schema="dbo" store:Type="Tables" />

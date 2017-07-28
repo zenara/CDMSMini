@@ -8,14 +8,6 @@
     <Property Name="adaname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="DSTRCTs" Relationship="Self.FK_DSTRCT_ADA" FromRole="ADA" ToRole="DSTRCT" />
   </EntityType>
-  <EntityType Name="ADMIN">
-    <Key>
-      <PropertyRef Name="nic" />
-    </Key>
-    <Property Name="nic" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="username" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityType Name="AGEGROUP">
     <Key>
       <PropertyRef Name="agegroupid" />
@@ -32,9 +24,9 @@
     <Property Name="ascid" Type="Int32" Nullable="false" />
     <Property Name="airange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ainame" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="nic" Type="Binary" MaxLength="50" FixedLength="false" />
-    <Property Name="telephone" Type="Binary" MaxLength="50" FixedLength="false" />
-    <Property Name="email" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="nic" Type="String" />
+    <Property Name="telephone" Type="String" />
+    <Property Name="email" Type="String" />
     <NavigationProperty Name="ASC" Relationship="Self.FK_AILIST_ASC" FromRole="AILIST" ToRole="ASC" />
     <NavigationProperty Name="MAJORPADDies" Relationship="Self.FK_MAJORPADDY_AILIST" FromRole="AILIST" ToRole="MAJORPADDY" />
     <NavigationProperty Name="MINORPADDies" Relationship="Self.FK_MINORPADDY_AILIST" FromRole="AILIST" ToRole="MINORPADDY" />
@@ -366,7 +358,6 @@
   </Association>
   <EntityContainer Name="CDMSEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ADAs" EntityType="Self.ADA" />
-    <EntitySet Name="ADMINs" EntityType="Self.ADMIN" />
     <EntitySet Name="AGEGROUPs" EntityType="Self.AGEGROUP" />
     <EntitySet Name="AILISTs" EntityType="Self.AILIST" />
     <EntitySet Name="ASCs" EntityType="Self.ASC" />

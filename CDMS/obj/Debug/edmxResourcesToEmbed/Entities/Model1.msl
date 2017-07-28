@@ -9,15 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ADMINs">
-      <EntityTypeMapping TypeName="CDMSModel.ADMIN">
-        <MappingFragment StoreEntitySet="ADMIN">
-          <ScalarProperty Name="nic" ColumnName="nic" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="password" ColumnName="password" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="AGEGROUPs">
       <EntityTypeMapping TypeName="CDMSModel.AGEGROUP">
         <MappingFragment StoreEntitySet="AGEGROUP">

@@ -25,9 +25,9 @@ namespace CDMS.Entities
         public int ascid { get; set; }
         public string airange { get; set; }
         public string ainame { get; set; }
-        public byte[] nic { get; set; }
-        public byte[] telephone { get; set; }
-        public byte[] email { get; set; }
+        public string nic { get; set; }
+        public string telephone { get; set; }
+        public string email { get; set; }
     
         public virtual ASC ASC { get; set; }
         public virtual ICollection<MAJORPADDY> MAJORPADDies { get; set; }
