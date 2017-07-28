@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@*@using Microsoft.AspNet.Identity
 @if ((string)(Session["log"]) == "1")
 {
     {
@@ -17,13 +17,15 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <ul class="nav navbar-nav navbar-right">*@
+        @* ALREADY COMMENTED <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        @*<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
-}
+}*@
 
-@*@using Microsoft.AspNet.Identity
+@* Comment boundary *@
+
+@using Microsoft.AspNet.Identity
     @if (Request.IsAuthenticated)
     {
         using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -40,8 +42,8 @@ else
     }
     else
     {
-        <ul class="nav navbar-nav navbar-right">*@
+        <ul class="nav navbar-nav navbar-right">
             @* ALREADY COMMENTED <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
-@*<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
-}*@
+}
