@@ -34,7 +34,7 @@ namespace CDMS.Entities
 
         [Required]
         [StringLength(10)]
-        [RegularExpression("/^[0-9]{9}[vVxX]$/", ErrorMessage="Invalid NIC number")]
+        [RegularExpression(@"/^[0-9]{9}[vVxX]$/", ErrorMessage="Invalid NIC number")]
         public string nic { get; set; }
 
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage="Invalid phone number")]
