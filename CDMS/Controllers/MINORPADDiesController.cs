@@ -42,7 +42,7 @@ namespace CDMS.Controllers
             ViewBag.aiid = new SelectList(db.AILISTs, "aiid", "airange");
             ViewBag.monthid = new SelectList(db.MONTHS, "monthid", "monthname");
             ViewBag.varietyid = new SelectList(db.VARIETies, "varietyid", "varietyname");
-            ViewBag.yearid = new SelectList(db.YEARS, "yearid", "yearid");
+            ViewBag.yearid = new SelectList(db.YEARS.OrderByDescending(e => e.yearid), "yearid", "yearref");
             return View();
         }
 

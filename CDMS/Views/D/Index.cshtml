@@ -4,10 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Divisional Secretarians</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a href="~/D/Create" class="btn btn-default btn-sm">Create New</a>
+
+    <a href="~/ASCs/Create" class="btn btn-default btn-sm">Add ASC</a>
 </p>
 <table class="table">
     <tr>
@@ -29,8 +32,8 @@
             @Html.DisplayFor(modelItem => item.DSTRCT.districtname)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.dsid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.dsid }) |
+            @Html.ActionLink("Modify", "Edit", new { id=item.dsid }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.dsid }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.dsid })
         </td>
     </tr>

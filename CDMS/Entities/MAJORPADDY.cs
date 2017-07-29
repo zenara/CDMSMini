@@ -11,6 +11,7 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class MAJORPADDY
     {
@@ -19,7 +20,11 @@ namespace CDMS.Entities
         public int yearid { get; set; }
         public int monthid { get; set; }
         public int varietyid { get; set; }
+
+        [Required]
         public double monthlytarget { get; set; }
+
+        [Required]
         public double monthlyprogress { get; set; }
     
         public virtual AILIST AILIST { get; set; }
