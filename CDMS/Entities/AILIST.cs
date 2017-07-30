@@ -36,10 +36,12 @@ namespace CDMS.Entities
 
         [Required]
         [StringLength(10)]
-        [RegularExpression(@"/^[0-9]{9}[vVxX]$/", ErrorMessage="Invalid NIC number")]
+        [RegularExpression(@"^[0-9]{9}[vVxX]$", ErrorMessage="Invalid NIC number")]
         public string nic { get; set; }
 
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage="Invalid phone number")]
+        
+        //[RegularExpression(@"^\d{10}$", ErrorMessage = "Characters are not allowed.")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid phone number")]
         [Display(Name="Telephone")]
         public string telephone { get; set; }
 

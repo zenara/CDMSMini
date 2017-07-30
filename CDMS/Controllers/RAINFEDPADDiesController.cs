@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CDMS.Entities;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 
 namespace CDMS.Controllers
 {
@@ -37,6 +40,7 @@ namespace CDMS.Controllers
         }
 
         // GET: RAINFEDPADDies/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.aiid = new SelectList(db.AILISTs, "aiid", "airange");
