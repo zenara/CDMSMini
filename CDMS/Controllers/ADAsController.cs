@@ -52,7 +52,7 @@ namespace CDMS.Controllers
             {
                 db.ADAs.Add(aDA);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(aDA);

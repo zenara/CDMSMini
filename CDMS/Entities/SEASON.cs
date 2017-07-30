@@ -11,6 +11,7 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class SEASON
     {
@@ -20,6 +21,8 @@ namespace CDMS.Entities
         }
     
         public int seasonid { get; set; }
+
+        [Display(Name="Season")]
         public string seasonname { get; set; }
     
         public virtual ICollection<MONTH> MONTHS { get; set; }

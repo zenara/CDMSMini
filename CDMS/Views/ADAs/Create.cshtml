@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Add Provinces</h2>
+<h3>Add Provinces</h3>
 
 
 @using (Html.BeginForm()) 
@@ -32,7 +32,10 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <div>
+        <a href="~/DSTRCTs/Create" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Back </a>
+    </div>
 </div>
 
 @section Scripts {

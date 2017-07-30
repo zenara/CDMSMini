@@ -57,7 +57,7 @@ namespace CDMS.Controllers
             {
                 db.MINORPADDies.Add(mINORPADDY);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.aiid = new SelectList(db.AILISTs, "aiid", "airange", mINORPADDY.aiid);

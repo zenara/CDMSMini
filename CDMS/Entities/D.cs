@@ -11,6 +11,7 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class D
     {
@@ -21,6 +22,7 @@ namespace CDMS.Entities
     
         public int dsid { get; set; }
         public int districtid { get; set; }
+        [Display(Name="Divisional Secretarian")]
         public string dsname { get; set; }
     
         public virtual ICollection<ASC> ASCs { get; set; }

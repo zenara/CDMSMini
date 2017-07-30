@@ -11,6 +11,7 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ASC
     {
@@ -21,6 +22,8 @@ namespace CDMS.Entities
     
         public int ascid { get; set; }
         public int dsid { get; set; }
+
+        [Display(Name="ASC")]
         public string ascname { get; set; }
     
         public virtual ICollection<AILIST> AILISTs { get; set; }

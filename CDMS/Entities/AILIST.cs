@@ -27,9 +27,11 @@ namespace CDMS.Entities
         public int ascid { get; set; }
 
         [Required]
+        [Display(Name="AI Range")]
         public string airange { get; set; }
 
         [Required]
+        [Display(Name="Name")]
         public string ainame { get; set; }
 
         [Required]
@@ -38,10 +40,12 @@ namespace CDMS.Entities
         public string nic { get; set; }
 
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage="Invalid phone number")]
+        [Display(Name="Telephone")]
         public string telephone { get; set; }
 
         [Required]
         [EmailAddress]
+        [Display(Name="Email")]
         public string email { get; set; }
     
         public virtual ASC ASC { get; set; }

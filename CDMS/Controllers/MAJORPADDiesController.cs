@@ -61,7 +61,7 @@ namespace CDMS.Controllers
             {
                 db.MAJORPADDies.Add(mAJORPADDY);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.aiid = new SelectList(db.AILISTs, "aiid", "airange", mAJORPADDY.aiid);

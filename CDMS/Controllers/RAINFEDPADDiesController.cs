@@ -57,7 +57,7 @@ namespace CDMS.Controllers
             {
                 db.RAINFEDPADDies.Add(rAINFEDPADDY);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.aiid = new SelectList(db.AILISTs, "aiid", "airange", rAINFEDPADDY.aiid);

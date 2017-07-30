@@ -54,7 +54,7 @@ namespace CDMS.Controllers
             {
                 db.DSTRCTs.Add(dSTRCT);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.adaid = new SelectList(db.ADAs, "adaid", "adaname", dSTRCT.adaid);

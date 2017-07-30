@@ -54,7 +54,7 @@ namespace CDMS.Controllers
             {
                 db.VARIETies.Add(vARIETY);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.agegroupid = new SelectList(db.AGEGROUPs, "agegroupid", "agegroupname", vARIETY.agegroupid);

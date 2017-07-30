@@ -54,7 +54,7 @@ namespace CDMS.Controllers
             {
                 db.DS.Add(d);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.districtid = new SelectList(db.DSTRCTs, "districtid", "districtname", d.districtid);

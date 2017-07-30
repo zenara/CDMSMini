@@ -54,7 +54,7 @@ namespace CDMS.Controllers
             {
                 db.ASCs.Add(aSC);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.dsid = new SelectList(db.DS, "dsid", "dsname", aSC.dsid);

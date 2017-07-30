@@ -4,13 +4,23 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>AGRICULTURE INSTRUCTORS</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
+<a href="~/AILISTs/Create" class="btn btn-success btn-sm" style="margin-bottom:1%;">ADD</a>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ASC.D.DSTRCT.districtname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASC.D.dsname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASC.ascname)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.airange)
         </th>
@@ -18,16 +28,10 @@
             @Html.DisplayNameFor(model => model.ainame)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nic)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.telephone)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ASC.ascname)
         </th>
         <th></th>
     </tr>
@@ -35,13 +39,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.ASC.D.DSTRCT.districtname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASC.D.dsname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASC.ascname)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.airange)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ainame)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nic)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.telephone)
@@ -49,14 +59,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.email)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ASC.ascname)
-        </td>
-        <td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.aiid }) |
             @Html.ActionLink("Details", "Details", new { id=item.aiid }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.aiid })
-        </td>
+        </td>*@
     </tr>
 }
 

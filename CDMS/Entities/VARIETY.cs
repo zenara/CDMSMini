@@ -11,6 +11,7 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class VARIETY
     {
@@ -22,6 +23,8 @@ namespace CDMS.Entities
         }
     
         public int varietyid { get; set; }
+
+        [Display(Name="Variety")]
         public string varietyname { get; set; }
         public int agegroupid { get; set; }
     

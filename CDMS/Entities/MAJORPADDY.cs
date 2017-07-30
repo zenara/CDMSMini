@@ -22,9 +22,11 @@ namespace CDMS.Entities
         public int varietyid { get; set; }
 
         [Required]
+        [Display(Name="Target")]
         public double monthlytarget { get; set; }
 
         [Required]
+        [Display(Name="Progress")]
         public double monthlyprogress { get; set; }
     
         public virtual AILIST AILIST { get; set; }

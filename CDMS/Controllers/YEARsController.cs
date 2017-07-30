@@ -52,7 +52,7 @@ namespace CDMS.Controllers
             {
                 db.YEARS.Add(yEAR);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(yEAR);
