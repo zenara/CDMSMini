@@ -11,7 +11,6 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class DSTRCT
     {
@@ -22,8 +21,6 @@ namespace CDMS.Entities
     
         public int districtid { get; set; }
         public int adaid { get; set; }
-
-        [Display(Name="District")]
         public string districtname { get; set; }
     
         public virtual ADA ADA { get; set; }

@@ -11,8 +11,6 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Linq;
     
     public partial class AILIST
     {
@@ -25,29 +23,10 @@ namespace CDMS.Entities
     
         public int aiid { get; set; }
         public int ascid { get; set; }
-
-        [Required]
-        [Display(Name="AI Range")]
         public string airange { get; set; }
-
-        [Required]
-        [Display(Name="Name")]
         public string ainame { get; set; }
-
-        [Required]
-        [StringLength(10)]
-        [RegularExpression(@"^[0-9]{9}[vVxX]$", ErrorMessage="Invalid NIC number")]
         public string nic { get; set; }
-
-        
-        //[RegularExpression(@"^\d{10}$", ErrorMessage = "Characters are not allowed.")]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid phone number")]
-        [Display(Name="Telephone")]
         public string telephone { get; set; }
-
-        [Required]
-        [EmailAddress]
-        [Display(Name="Email")]
         public string email { get; set; }
     
         public virtual ASC ASC { get; set; }

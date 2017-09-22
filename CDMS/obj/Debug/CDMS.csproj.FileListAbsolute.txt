@@ -50,6 +50,6 @@ C:\Users\Chathurika Senani\Documents\Projects\Mini Project 3 1\CDMS\CDMS\bin\Mic
 C:\Users\Chathurika Senani\Documents\Projects\Mini Project 3 1\CDMS\CDMS\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Chathurika Senani\Documents\Projects\Mini Project 3 1\CDMS\CDMS\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Chathurika Senani\Documents\Projects\Mini Project 3 1\CDMS\CDMS\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Chathurika Senani\Documents\Projects\Mini Project 3 1\CDMS\CDMS\obj\Debug\CDMS.csprojResolveAssemblyReference.cache
 C:\Users\Chathurika Senani\Documents\Projects\Mini Project 3 1\CDMS\CDMS\obj\Debug\CDMS.dll
 C:\Users\Chathurika Senani\Documents\Projects\Mini Project 3 1\CDMS\CDMS\obj\Debug\CDMS.pdb
-C:\Users\Chathurika Senani\Documents\Projects\Mini Project 3 1\CDMS\CDMS\obj\Debug\CDMS.csprojResolveAssemblyReference.cache

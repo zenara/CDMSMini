@@ -11,7 +11,6 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class YEAR
     {
@@ -23,8 +22,6 @@ namespace CDMS.Entities
         }
     
         public int yearid { get; set; }
-
-        [Display(Name = "Year")]
         public int yearref { get; set; }
     
         public virtual ICollection<MAJORPADDY> MAJORPADDies { get; set; }

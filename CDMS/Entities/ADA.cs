@@ -11,7 +11,6 @@ namespace CDMS.Entities
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class ADA
     {
@@ -21,8 +20,6 @@ namespace CDMS.Entities
         }
     
         public int adaid { get; set; }
-
-        [Required]
         public string adaname { get; set; }
     
         public virtual ICollection<DSTRCT> DSTRCTs { get; set; }
