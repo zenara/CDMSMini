@@ -13,6 +13,14 @@
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
+
+@{
+    double mpc = 0;
+    double mtc = 0;
+    double ypc = 0;
+    double ytc = 0;
+}
+
 <table class="table">
     <tr>
     <th>
@@ -73,3 +81,42 @@
 }
 
 </table>
+@foreach (var item in Model)
+{
+    if (@item.MONTH.SEASON.seasonname == @item.MONTH.SEASON.seasonmaha && @item.YEAR.yearid == 9)
+    {
+        mpc = item.monthlyprogress + mpc;
+        mtc = item.monthlytarget + mtc;
+    }
+    else if (@item.MONTH.SEASON.seasonname == @item.MONTH.SEASON.seasonyala && @item.YEAR.yearid == 9)
+    {
+        ypc = item.monthlyprogress + ypc;
+        ytc = item.monthlytarget + ytc;
+    }
+}
+@{
+    double mratio = Math.Round((mpc / mtc) * 100, 2);
+    double yratio = Math.Round((ypc / ytc) * 100, 2);
+}
+<h4>Yala Target Achievement</h4>
+@if (yratio >= 0)
+{
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: @yratio%; background-color:#57bf57;" aria-valuenow="@yratio" aria-valuemin="0" aria-valuemax="100">@yratio%</div>
+    </div>
+}
+else
+{
+    <p>No data to display for this year</p>
+}
+<h4>Maha Target Achievement</h4>
+@if (mratio >= 0)
+{
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: @mratio%" aria-valuenow="@mratio" aria-valuemin="0" aria-valuemax="100">@mratio%</div>
+    </div>
+}
+else
+{
+    <p>No data to display for this year</p>
+}
